@@ -4,13 +4,30 @@
             <app-shopping-edit></app-shopping-edit>
             <hr>
             <ul class="list-group">
-                <a 
-                    class="list-group-item border border-info" 
+                <a
+                    class="list-group-item border border-info"
                     style="cursor: pointer;"
                     *ngFor="let ing of (ingredients | async).ingredients; let i  = index;"
                     (click)="onEditItem(i)"
                 >{{ ing.name }} ({{ ing.amount }})</a>
             </ul>
+        </div>
+
+        <!-- Stripe Payment Example -->
+        <div class="col-10">
+          <div class="container mt-5">
+            <h2 class="text-center">Stripe Checkout</h2>
+            <div class="row mt-5">
+
+              <div class="col-md-4 m-auto">
+                <button (click)="pay(30)" class="btn btn-success btn-block">Pay $30</button>
+              </div>
+
+            </div>
+            <p class="mt-5 text-center">
+                Try it out using the test card number <b>4242 4242 4242 4242</b>, a random three-digit CVC number, any expiration date in the future, and a random five-digit U.S. ZIP code.
+            </p>
+          </div>
         </div>
     </div>
 </div>

@@ -13,6 +13,7 @@ import * as fromApp from '../store/app.reducer';
 })
 export class ShoppingListComponent implements OnInit, OnDestroy {
   ingredients: Observable<{ ingredients: Ingredient[] }>;
+  handler: any;
   // private igChangeSub: Subscription;
 
   constructor(private store: Store<fromApp.AppState>) { }
@@ -35,5 +36,45 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     // this.igChangeSub.unsubscribe();
+  }
+  pay(amount) {
+
+    var handler = (<any>window).StripeCheckout.configure({
+      key: 'pk_test_aeUUjYYcx4XNfKVW60pmHTtI',
+      locale: 'auto',
+      token: function (token: any) {
+        console.log(token)
+        alert('Token Created!!');
+      }
+    });
+
+    handler.open({
+      name: 'Recipe World App',
+      description: 'Shopping List Payment of Ingredients',
+      amount: amount * 100
+    });
+
+  }
+
+  loadStripe() {
+
+    if(!window.document.getElementById('stripe-script')) {
+      const s = window.document.createElement("script");
+      s.id = "stripe-script";
+      s.type = "text/javascript";
+      s.src = "https://checkout.stripe.com/checkout.js";
+      s.onload = () => {
+        this.handler = (<any>window).StripeCheckout.configure({
+          key: 'pk_test_aeUUjYYcx4XNfKVW60pmHTtI',
+          locale: 'auto',
+          token: function (token: any) {
+            console.log(token)
+            alert('Payment Success!!');
+          }
+        });
+      }
+
+      window.document.body.appendChild(s);
+    }
   }
 }
