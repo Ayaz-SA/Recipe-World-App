@@ -1,4 +1,9 @@
-# V15FinalRelease
+## Recipe World App
+# Demo Link
+https://recipeworld-f4d13.firebaseapp.com/auth
+
+## Description
+We can add new recipe and see all recipes of other users. Manage our own recipe.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
 
