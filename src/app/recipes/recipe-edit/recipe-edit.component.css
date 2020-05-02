@@ -1,0 +1,17 @@
+.btnGroup {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.editBox {
+    border: 1px solid #035c69;
+    box-shadow: 3px 8px 15px 2px #035c69;
+}
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+.form-control{
+    border: 1px solid #035c69;
+}
+  

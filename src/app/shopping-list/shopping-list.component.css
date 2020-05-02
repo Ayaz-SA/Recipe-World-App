@@ -1,0 +1,11 @@
+a{
+    text-decoration: none;
+    color: #212529;
+} 
+.shoppingList {
+    border: 1px solid #035c69;
+    box-shadow: 3px 8px 15px 2px #035c69;
+    padding: 10%;
+    padding-left: 15%;
+    margin-top: 5%;
+}

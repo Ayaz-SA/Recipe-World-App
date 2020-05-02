@@ -1,0 +1,11 @@
+a{
+    text-decoration: none;
+    color: #212529;
+} 
+.active{
+    background-color: #17a2b8;
+    box-shadow: 3px 8px 15px 2px #035c69;
+    color: #f5f5f5;
+    font-weight: bolder;
+    line-height: normal;
+}
